@@ -1,6 +1,7 @@
 <script>
 export default {
   emits: ['car-submitted'],
+
   data() {
     return {
       car: {
