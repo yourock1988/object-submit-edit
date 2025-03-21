@@ -11,7 +11,9 @@ export default {
   },
   methods: {
     addCar() {
-      console.log(this.car)
+      if (this.car.brand === '' || this.car.price === '') {
+        return
+      }
 
       this.$emit('car-submitted', { ...this.car })
       this.car.brand = ''
