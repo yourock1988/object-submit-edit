@@ -7,12 +7,7 @@ export default {
 
   data() {
     return {
-      cars: [
-        {
-          brand: 'Audi',
-          price: 42000,
-        },
-      ],
+      cars: [],
     }
   },
 }
@@ -20,11 +15,7 @@ export default {
 
 <template>
   <div>
-    <h1>Cars</h1>
-
-    <div>
-      {{ cars }}
-    </div>
+    <h1 @click="cars[0].price = 77777">Cars</h1>
 
     <CarSubmitter @car-submitted="cars.push($event)" />
 
@@ -36,5 +27,9 @@ export default {
         @car-edited="cars[idx] = $event"
       />
     </ul>
+  </div>
+
+  <div>
+    {{ cars }}
   </div>
 </template>
