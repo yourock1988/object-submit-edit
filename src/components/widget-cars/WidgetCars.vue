@@ -24,6 +24,7 @@ export default {
         v-for="(car, idx) of cars"
         :key="idx"
         :car="car"
+        :cars
         @car-edited="cars[idx] = $event"
       />
     </ul>

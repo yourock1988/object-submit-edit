@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ['car'],
+  props: ['car', 'cars'],
 
   emits: ['car-edited'],
 
@@ -8,6 +8,15 @@ export default {
     return {
       localCar: { ...this.car },
     }
+  },
+  watch: {
+    car: {
+      handler(newCar) {
+        console.log(this.car)
+        this.localCar = { ...newCar }
+      },
+      deep: true,
+    },
   },
 }
 </script>

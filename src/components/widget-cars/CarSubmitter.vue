@@ -23,6 +23,14 @@ export default {
       this.car = initCar()
     },
   },
+  // watch: {
+  //   'car.brand': function (newValue, oldValue) {
+  //     console.log(`Brand changed from ${oldValue} to ${newValue}`)
+  //   },
+  //   'car.price': function (newValue, oldValue) {
+  //     console.log(`Price changed from ${oldValue} to ${newValue}`)
+  //   },
+  // },
 }
 </script>
 
