@@ -17,35 +17,25 @@ export default {
   },
 
   methods: {
-    addCar() {
+    submitCar() {
       if (this.car.brand === '' || this.car.price === 0) return
       this.$emit('car-submitted', this.car)
       this.car = initCar()
     },
   },
-  // watch: {
-  //   'car.brand': function (newValue, oldValue) {
-  //     console.log(`Brand changed from ${oldValue} to ${newValue}`)
-  //   },
-  //   'car.price': function (newValue, oldValue) {
-  //     console.log(`Price changed from ${oldValue} to ${newValue}`)
-  //   },
-  // },
 }
 </script>
 
 <template>
   <div>
-    <span>Car brand</span>
-    <input type="text" v-model="car.brand" />
+    <div>
+      <span>Car brand</span>
+      <input type="text" v-model="car.brand" />
+    </div>
+    <div>
+      <span>Car price</span>
+      <input type="number" v-model.number="car.price" />
+    </div>
+    <button @click="submitCar">Submit</button>
   </div>
-
-  <div>
-    <span>Car Price</span>
-    <input type="number" v-model.number="car.price" />
-  </div>
-
-  <button @click="addCar">Submit</button>
 </template>
-
-<!-- сделать чтоб свойства можно было вводить руками -->

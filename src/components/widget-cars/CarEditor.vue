@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ['car', 'cars'],
+  props: ['car'],
 
   emits: ['car-edited'],
 
@@ -11,11 +11,10 @@ export default {
   },
   watch: {
     car: {
+      deep: true,
       handler(newCar) {
-        console.log(this.car)
         this.localCar = { ...newCar }
       },
-      deep: true,
     },
   },
 }
@@ -28,5 +27,3 @@ export default {
     <button @click="$emit('car-edited', { ...localCar })">EDIT</button>
   </li>
 </template>
-
-<!-- @click="$emit('car-edited', { brand: car.brand, price: 777 })" -->

@@ -1,9 +1,9 @@
 <script>
-import CarEditor from './CarEditor.vue'
 import CarSubmitter from './CarSubmitter.vue'
+import CarList from './CarList.vue'
 
 export default {
-  components: { CarEditor, CarSubmitter },
+  components: { CarSubmitter, CarList },
 
   data() {
     return {
@@ -19,15 +19,7 @@ export default {
 
     <CarSubmitter @car-submitted="cars.push($event)" />
 
-    <ul>
-      <CarEditor
-        v-for="(car, idx) of cars"
-        :key="idx"
-        :car="car"
-        :cars
-        @car-edited="cars[idx] = $event"
-      />
-    </ul>
+    <CarList :cars="cars" />
   </div>
 
   <div>
