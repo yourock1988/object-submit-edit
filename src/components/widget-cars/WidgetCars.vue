@@ -19,7 +19,7 @@ export default {
 
     <CarSubmitter @car-submitted="cars.push($event)" />
 
-    <CarList :cars="cars" />
+    <CarList :cars="cars" @update-cars="cars = $event" />
   </div>
 
   <div>
